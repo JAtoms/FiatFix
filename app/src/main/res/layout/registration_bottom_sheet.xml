@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/registration_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drw_bottom_sheet_rectangle">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/drw_bottom_sheet_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtView_login"
+                style="@style/headers_blue_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/sign_up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <EditText
+                    android:id="@+id/edit_txt_name"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtView_login"
+                    android:hint="@string/name" />
+
+                <EditText
+                    android:id="@+id/edit_username"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_name"
+                    android:hint="@string/username"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edit_txt_email"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_username"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/edit_password"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_email"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+
+            <LinearLayout
+                android:id="@+id/btn_sign_up"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/drw_blue_filled_curved_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_password">
+
+                <TextView
+                    android:id="@+id/txt_view_continue"
+                    style="@style/txt_body_white_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/already_have"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+                app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sign_up">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:text="@string/already_have_an_account"
+                    app:layout_constraintEnd_toEndOf="@+id/login_btn2"
+                    app:layout_constraintStart_toStartOf="@+id/login_btn2"
+                    app:layout_constraintTop_toBottomOf="@+id/login_btn2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/login"
+                    style="@style/txt_body_blue_14"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/login_btn2"
+                    app:layout_constraintStart_toStartOf="@+id/login_btn2"
+                    app:layout_constraintTop_toBottomOf="@+id/login_btn2" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/txt_input_email"-->
+<!--style="@style/edit_texts"-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_height="60dp"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="24dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintHorizontal_bias="0.0"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/txtView_login">-->
+
+<!--<com.google.android.material.textfield.TextInputEditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:hint="@string/email" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/textInputLayout"-->
+<!--style="@style/edit_texts"-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_height="60dp"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="16dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintHorizontal_bias="0.0"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/txt_input_email">-->
+
+<!--<com.google.android.material.textfield.TextInputEditText-->
+<!--    android:id="@+id/edit_password"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:hint="@string/password"-->
+<!--    android:inputType="textPassword" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->

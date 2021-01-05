@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dtechatoms.fiatfix.ui.HomeFragment"
+        android:label="fragment_home_fragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragmet_to_investmentDetailsFragment"
+            app:destination="@id/investmentDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragmet_to_learnFragment"
+            app:destination="@id/learnFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chooseInvestmentFragment"
+            app:destination="@id/chooseInvestmentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/investmentDetailsFragment"
+        android:name="com.dtechatoms.fiatfix.ui.InvestmentDetailsFragment"
+        android:label="InvestmentDetailsFragment"
+        tools:layout="@layout/fragment_investment_details" />
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.dtechatoms.fiatfix.ui.LearnFragment"
+        android:label="fragment_learn"
+        tools:layout="@layout/fragment_learn" />
+    <fragment
+        android:id="@+id/chooseInvestmentFragment"
+        android:name="com.dtechatoms.fiatfix.ui.ChooseInvestmentFragment"
+        android:label="ChooseInvestmentFragment"
+        tools:layout="@layout/fragment_choose_investment">
+        <action
+            android:id="@+id/action_chooseInvestmentFragment_to_investmentFragment"
+            app:destination="@id/investmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/investmentFragment"
+        android:name="com.dtechatoms.fiatfix.ui.InvestmentFragment"
+        android:label="InvestmentFragment"
+        tools:layout="@layout/fragment_investment"/>
+</navigation>

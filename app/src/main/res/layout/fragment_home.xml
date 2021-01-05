@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_500"
+            tools:context=".ui.HomeFragment">
+
+            <ImageView
+                android:id="@+id/img_add_investment"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="64dp"
+                android:src="@drawable/ic_quick_invest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/headers_white_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/fund_and_invest"
+                app:layout_constraintEnd_toEndOf="@+id/img_add_investment"
+                app:layout_constraintStart_toStartOf="@+id/img_add_investment"
+                app:layout_constraintTop_toBottomOf="@+id/img_add_investment" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/txt_body_white_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="42dp"
+                android:text="@string/quickly_fund_and_invest"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/learn_to_invest"
+                android:layout_width="150dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:textStyle="bold"
+                style="@style/txt_body_white_14"
+                android:textColor="@color/purple_500"
+                android:textAllCaps="false"
+                android:text="@string/learn_to_invest"
+                android:background="@drawable/drw_white_filled_curved_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+
+            <LinearLayout
+                android:id="@+id/drawer_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_drawer_menu"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="31dp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:behavior_hideable="false"
+            android:layout_marginTop="40dp"
+            app:behavior_peekHeight="450dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drw_bottom_sheet_rectangle">
+
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="50dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/drw_bottom_sheet_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_live_investment"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/drw_curved_ash_rectangle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            style="@style/sub_headers_bold_black_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/live_investments"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_live_investment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="16dp"
+                            android:clipToPadding="false"
+                            android:layoutDirection="ltr"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3"
+                            app:spanCount="1"
+                            tools:itemCount="20"
+                            tools:listitem="@layout/item_home_investment" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txt_view_chart"
+                        style="@style/headers_blue_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/today_s_chart"
+                        app:layout_constraintStart_toStartOf="@+id/layout_live_investment"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_live_investment" />
+
+                    <Button
+                        android:id="@+id/btn_trade_view"
+                        style="@style/txt_body_blue_14"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/drw_blue_outlined6_curved_button"
+                        android:text="@string/trade_view"
+                        android:textAllCaps="false"
+                        android:textColor="@color/purple_500"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_view_chart"
+                        app:layout_constraintEnd_toEndOf="@+id/layout_guranteed_payment"
+                        app:layout_constraintTop_toTopOf="@+id/txt_view_chart" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_guranteed_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/drw_curved_ash_rectangle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_view_chart">
+
+                        <TextView
+                            android:id="@+id/txt_guranteed"
+                            style="@style/sub_headers_bold_black_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/guaranteed_investments"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_guranteed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="16dp"
+                            android:clipToPadding="false"
+                            android:layoutDirection="ltr"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_guranteed"
+                            app:spanCount="1"
+                            tools:itemCount="20"
+                            tools:listitem="@layout/item_home_investment" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txt_view_buy_sell"
+                        style="@style/headers_blue_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/buy_or_sell_crypto"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.46"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_guranteed_payment" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_gur"
+                        android:layout_width="135dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="120dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="120dp"
+                        android:layout_marginBottom="32dp"
+                        android:background="@drawable/drw_curved_ash_rectangle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_view_buy_sell">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_buy"
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/drw_curved_white_rectangle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_green_arrow_down"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/txt_body_green_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/buy"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_sell"
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/drw_curved_white_rectangle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_red_arrow_up"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/txt_body_red_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/buy"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

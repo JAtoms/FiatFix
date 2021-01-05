@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/card_detail_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drw_bottom_sheet_rectangle">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/drw_bottom_sheet_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtView_login"
+                style="@style/headers_blue_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/card_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <EditText
+                    android:id="@+id/edit_txt_name"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtView_login"
+                    android:hint="@string/card_name" />
+
+                <EditText
+                    android:id="@+id/edit_username"
+                    style="@style/edit_texts"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_name"
+                    android:hint="@string/card_number"
+                    android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_txt_email"
+                style="@style/edit_texts"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Expiry Date"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_username" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                style="@style/edit_texts"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/cvv"
+                android:inputType="textPassword"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_txt_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/edit_txt_email" />
+
+            <LinearLayout
+                android:id="@+id/btn_continue"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/drw_blue_filled_curved_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/edit_password">
+
+                <TextView
+                    android:id="@+id/txt_view_continue"
+                    style="@style/txt_body_white_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/continues" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_cancel"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drw_blue_outlined_curved_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:text="@string/login"
+                android:textColor="@color/purple_500"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_continue"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/btn_continue">
+
+                <TextView
+                    android:id="@+id/txt_view_login"
+                    style="@style/txt_body_blue_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.OnBoard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/lady_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_img_lady" />
+
+                    <TextView
+                        android:id="@+id/txt_have_some"
+                        style="@style/headers_blue_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/have_some_fiat"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lady_image" />
+
+                    <TextView
+                        android:id="@+id/txt_lets_help"
+                        style="@style/txt_body_blue_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"
+                        android:text="@string/lets_help_you_fix_it"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_have_some" />
+
+                    <TextView
+                        android:id="@+id/txt_in_split"
+                        style="@style/txt_body_black_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="50dp"
+                        android:text="@string/in_split_seconds"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_lets_help" />
+
+                    <LinearLayout
+                        android:id="@+id/login_btn1"
+                        android:layout_width="120dp"
+                        android:layout_height="55dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/drw_blue_outlined_curved_button"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:text="@string/login"
+                        android:textColor="@color/purple_500"
+                        app:layout_constraintBottom_toBottomOf="@+id/sign_up1"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="@+id/sign_up1">
+
+                        <TextView
+                            android:id="@+id/txt_view_login"
+                            style="@style/txt_body_blue_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/login" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sign_up1"
+                        android:layout_width="120dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="32dp"
+                        android:background="@drawable/drw_blue_filled_curved_button"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_in_split">
+
+                        <TextView
+                            android:id="@+id/txt_view_continue"
+                            style="@style/txt_body_white_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sign_up" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".5" />
+
+                    <TextView
+                        android:id="@+id/use_google"
+                        style="@style/txt_body_black_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/use_google_or_facebook"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="@+id/sign_up1"
+                        app:layout_constraintStart_toStartOf="@+id/login_btn1"
+                        app:layout_constraintTop_toBottomOf="@id/login_btn1" />
+
+                    <ImageView
+                        android:id="@+id/img_google"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/use_google"
+                        app:srcCompat="@drawable/ic_google" />
+
+                    <ImageView
+                        android:id="@+id/img_facebook"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_google"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="@+id/img_google"
+                        app:srcCompat="@drawable/ic_facebook" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

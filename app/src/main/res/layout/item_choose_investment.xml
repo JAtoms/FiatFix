@@ -1,0 +1,128 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
+        android:id="@+id/cardView3"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_card">
+
+
+            <TextView
+                android:id="@+id/txt_heading"
+                style="@style/sub_headers_blue_18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Investment Chart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_crypt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_heading"
+                app:layout_constraintStart_toStartOf="@+id/txt_heading"
+                app:layout_constraintTop_toBottomOf="@+id/txt_heading"
+                app:srcCompat="@drawable/ic_img_btc_chart" />
+
+            <ImageView
+                android:id="@+id/crypto_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_crypt"
+                app:layout_constraintTop_toBottomOf="@+id/img_crypt"
+                app:srcCompat="@drawable/ic_btc_yellow" />
+
+            <LinearLayout
+                android:id="@+id/btn_rate"
+                android:layout_width="52dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/drw_2blue_filled_curved_button"
+                android:gravity="center"
+                android:minWidth="75dp"
+                android:orientation="horizontal"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="@+id/crypto_icon"
+                app:layout_constraintTop_toBottomOf="@+id/crypto_icon">
+
+                <TextView
+                    style="@style/txt_body_white_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+7.004%" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                style="@style/txt_body_blue_12"
+                android:text="PIPS Value"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_rate"
+                app:layout_constraintStart_toEndOf="@+id/btn_rate"
+                app:layout_constraintTop_toTopOf="@+id/btn_rate" />
+
+            <TextView
+                android:id="@+id/txt_value_pips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                style="@style/txt_body_green_12"
+                android:text="+0.022pips"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+            <Button
+                android:id="@+id/btn_invest"
+                style="@style/txt_body_white_14"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/drw_2blue_filled_curved_button"
+                android:text="Invest"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_value_pips"
+                app:layout_constraintEnd_toEndOf="@+id/img_crypt"
+                app:layout_constraintHorizontal_bias="0.58"
+                app:layout_constraintStart_toEndOf="@+id/txt_value_pips"
+                app:layout_constraintTop_toBottomOf="@+id/img_crypt"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
